@@ -20,3 +20,9 @@ console.log(num);
 let age = 40;
 let dogYears = (age + 1) / 7;
 console.log(dogYears);
+
+//Challenge
+let maxScore = 20;
+let studentScore = 18;
+let percent = (studentScore / maxScore) * 100;
+console.log(percent);
