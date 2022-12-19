@@ -1,5 +1,21 @@
 let temp = 65;
 
 if (temp >= 60 && temp <= 90) {
-  console.log("It is really nice out");
+  console.log("It is pretty nice out.");
+} else if (temp >= 120 || temp <= 0) {
+  console.log("Do not go outside.");
+} else {
+  console.log("Eh. Do what you want");
+}
+
+//Challenge
+let isGuestOneVegan = true;
+let isGuestTwoVegan = false;
+
+if (isGuestOneVegan && isGuestTwoVegan) {
+  console.log("Only offer vegan options");
+} else if (isGuestOneVegan || isGuestTwoVegan) {
+  console.log("Offer up some vegan options");
+} else {
+  console.log("Offer up anything on the menu");
 }
