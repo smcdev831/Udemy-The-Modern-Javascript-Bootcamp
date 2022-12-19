@@ -3,4 +3,5 @@ console.log(name);
 
 let firstName = "Sharon";
 let lastName = "M";
-console.log(firstName, lastName);
+let fullName = firstName + " " + lastName;
+console.log(fullName);
