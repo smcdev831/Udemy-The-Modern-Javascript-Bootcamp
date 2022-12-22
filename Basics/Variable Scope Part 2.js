@@ -1,8 +1,9 @@
-let name = "Andrew";
+// let name = "Andrew";
 
 if (true) {
-  let name = "Mike";
+  //   let name = "Mike";
   if (true) {
+    name = "Jen";
     console.log(name);
   }
 }
