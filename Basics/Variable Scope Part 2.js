@@ -3,7 +3,7 @@
 if (true) {
   //   let name = "Mike";
   if (true) {
-    name = "Jen";
+    let name = "Jen";
     console.log(name);
   }
 }
