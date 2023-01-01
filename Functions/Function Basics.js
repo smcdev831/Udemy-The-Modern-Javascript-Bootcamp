@@ -16,3 +16,12 @@ let otherValue = square(10);
 
 console.log(value);
 console.log(otherValue);
+
+//Challenge Area
+
+let convertFahrenheitToCelsius = function (num) {
+  console.log((num - 32) * (5 / 9));
+};
+
+convertFahrenheitToCelsius(32);
+convertFahrenheitToCelsius(68);
