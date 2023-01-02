@@ -14,3 +14,13 @@ let getScoreText = function (name = "Anonymous", score = 0) {
 
 let scoreText = getScoreText();
 console.log(scoreText);
+
+//Challenge Area
+let getTip = function (bill, tipPercent = 0.2) {
+  let total = bill * tipPercent + bill;
+  return total;
+};
+
+console.log(getTip(100));
+console.log(getTip(100, 0.3));
+console.log(getTip(50, 0.1));
