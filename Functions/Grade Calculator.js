@@ -1,16 +1,18 @@
 let gradeCalculator = function (studentScore, totalPossible) {
   let grade = (studentScore / totalPossible) * 100;
   if (grade >= 90) {
-    return `You got an A (${grade}%)!`;
+    letterGrade = "A";
   } else if (grade >= 80) {
-    return `You got an B (${grade}%)!`;
+    letterGrade = "B";
   } else if (grade >= 70) {
-    return `You got an C (${grade}%)!`;
+    letterGrade = "C";
   } else if (grade >= 60) {
-    return `You got an D (${grade}%)!`;
+    letterGrade = "D";
   } else {
-    return `You got an F (${grade}%)!`;
+    letterGrade = "F";
   }
+
+  return `You got an ${letterGrade} (${grade}%)!`;
 };
 
 console.log(gradeCalculator(90, 100));
