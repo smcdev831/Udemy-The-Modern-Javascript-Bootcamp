@@ -6,15 +6,18 @@ let myBook = {
 
 let otherBook = {
   title: "A People's History of the United States",
-  author: "Howard Zin",
+  author: "Howard Zinn",
   pageCount: 723,
 };
 
 let getSummary = function (book) {
-  console.log(
-    `${book.title} by ${book.author} is ${book.pageCount} pages long.`
-  );
+  return {
+    summary: `${book.title} is by ${book.author}`,
+    pageCountSummary: `${book.title} is ${book.pageCount} pages long.`,
+  };
 };
 
-getSummary(myBook);
-getSummary(otherBook);
+let bookSummary = getSummary(myBook);
+let otherBookSummary = getSummary(otherBook);
+
+console.log(bookSummary.pageCountSummary);
