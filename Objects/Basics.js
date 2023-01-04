@@ -12,3 +12,16 @@ console.log(
 
 myBook.title = "Animal Farm";
 console.log(myBook);
+
+//Challenge Area
+
+let person = {
+  name: "John",
+  age: 39,
+  location: "Scotland",
+};
+
+console.log(`${person.name} is ${person.age} and lives in ${person.location}.`);
+
+person.age = person.age + 1;
+console.log(`${person.name} is ${person.age} and lives in ${person.location}.`);
