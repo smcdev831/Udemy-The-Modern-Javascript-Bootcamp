@@ -18,11 +18,14 @@ let resetAccount = function (account) {
 };
 
 let getAccountSummary = function (account) {
-  let total = account.income - account.expenses;
+  let balance = account.income - account.expenses;
   console.log(
-    `Account for ${account.name} has ${total}. ${account.income} in income. ${account.expenses} in expenses.`
+    `Account for ${account.name} has $${balance}. $${account.income} in income. $${account.expenses} in expenses.`
   );
 };
+
+addExpense(myAccount, 2.5);
+console.log(myAccount);
 
 addExpense(myAccount, 2.5);
 console.log(myAccount);
