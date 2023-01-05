@@ -23,3 +23,14 @@ let getAccountSummary = function (account) {
     `Account for ${account.name} has ${total}. ${account.income} in income. ${account.expenses} in expenses.`
   );
 };
+
+addExpense(myAccount, 2.5);
+console.log(myAccount);
+
+addIncome(myAccount, 1000);
+console.log(myAccount);
+
+getAccountSummary(myAccount);
+
+resetAccount(myAccount);
+console.log(myAccount);
