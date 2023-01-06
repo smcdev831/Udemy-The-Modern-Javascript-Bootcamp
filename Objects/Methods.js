@@ -1,13 +1,10 @@
 let restaurant = {
   name: "Castaways",
   guestCapacity: 75,
-  guestCount: 15,
+  guestCount: 0,
+  checkAvailability: function (partySize) {
+    console.log(partySize);
+  },
 };
 
-let seating = function (restuarant, party) {
-  return restuarant.guestCapacity - restuarant.guestCount >= party
-    ? "This party can be seated"
-    : "Add to the waitlist";
-};
-
-console.log(seating("Castaways", 22));
+restaurant.checkAvailability(15);
