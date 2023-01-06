@@ -3,8 +3,12 @@ let restaurant = {
   guestCapacity: 75,
   guestCount: 0,
   checkAvailability: function (partySize) {
-    console.log(partySize);
+    return restaurant.guestCapacity - restaurant.guestCount >= partySize;
   },
 };
 
-restaurant.checkAvailability(15);
+let status = restaurant.checkAvailability(4);
+console.log(status);
+
+status = restaurant.checkAvailability(76);
+console.log(status);
