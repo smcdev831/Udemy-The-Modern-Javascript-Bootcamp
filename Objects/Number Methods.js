@@ -16,3 +16,19 @@ let min = 10;
 let max = 20;
 let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 console.log(randomNumber);
+
+//Challenge area
+
+let makeGuess = function (guess) {
+  let min = 1;
+  let max = 5;
+  let randomNumber = Math.floor(Math.random() * max - min + 1) + min;
+  console.log(randomNumber);
+  return guess === randomNumber;
+};
+
+console.log(makeGuess(1));
+console.log(makeGuess(2));
+console.log(makeGuess(3));
+console.log(makeGuess(4));
+console.log(makeGuess(5));
