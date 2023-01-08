@@ -4,3 +4,4 @@ console.log(notes);
 console.log(notes.length);
 console.log(notes[2]);
 console.log(notes[22]);
+console.log(notes[notes.length - 1]);
