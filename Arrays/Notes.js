@@ -37,3 +37,8 @@ console.log(notes.length);
 // notes[2] = "This is now the new note 3";
 // console.log(notes);
 // console.log(notes.length);
+
+notes.forEach(function (item, index) {
+  console.log(index);
+  console.log(item);
+});
