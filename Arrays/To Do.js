@@ -39,3 +39,6 @@ let deleteTodo = function (todos, task) {
 
 deleteTodo(todos, "Do sports");
 console.log(todos);
+
+deleteTodo(todos, "Do laundry");
+console.log(todos);
