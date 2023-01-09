@@ -1,7 +1,7 @@
-const notes = ["Note 1", "Note 2", "Note 3"];
+// const notes = ["Note 1", "Note 2", "Note 3"];
 
-console.log(notes);
-console.log(notes.length);
+// console.log(notes);
+// console.log(notes.length);
 // console.log(notes[2]);
 // console.log(notes[22]);
 // console.log(notes[notes.length - 1]);
@@ -43,18 +43,46 @@ console.log(notes.length);
 //   console.log(item);
 // });
 
-for (let count = 0; count <= 2; count++) {
-  console.log(`Counting... ${count}`);
-}
+// for (let count = 0; count <= 2; count++) {
+//   console.log(`Counting... ${count}`);
+// }
 
-for (let count = 2; count >= 0; count--) {
-  console.log(`Counting... ${count}`);
-}
+// for (let count = 2; count >= 0; count--) {
+//   console.log(`Counting... ${count}`);
+// }
 
-for (let count = 0; count < notes.length; count++) {
-  console.log(notes[count]);
-}
+// for (let count = 0; count < notes.length; count++) {
+//   console.log(notes[count]);
+// }
 
-for (let count = notes.length - 1; count >= 0; count--) {
-  console.log(notes[count]);
-}
+// for (let count = notes.length - 1; count >= 0; count--) {
+//   console.log(notes[count]);
+// }
+
+// console.log(notes.indexOf("Note 2"));
+
+const notes = [
+  {},
+  {
+    title: "My next trip",
+    body: "John and Karyn in Texas",
+  },
+  {
+    title: "Habits to work on",
+    body: "Exercise, eating better, drinking water",
+  },
+  {
+    title: "Goals",
+    body: "Finish courses and get a new job",
+  },
+];
+
+console.log(notes);
+console.log(notes.length);
+
+let index = notes.findIndex(function (note, index) {
+  console.log(note);
+  return note.title === "Habits to work on";
+});
+
+console.log(index);
