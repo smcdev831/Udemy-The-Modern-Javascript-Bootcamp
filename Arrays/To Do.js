@@ -28,10 +28,12 @@ console.log(`You have ${todos.length} todos.`);
 // }
 
 //Challenge 5
-let deleteTodo = function (task) {
-  let index = todos.findIndex(task);
+let deleteTodo = function (todos, task) {
+  let index = (index = todos.findIndex(function (task, index) {
+    return task.title.toLowerCase() === task.toLowerCase();
+  }));
   todos.splice(index, 1);
 };
 
-deleteTodo("Do laundry");
+deleteTodo(todos, "Do laundry");
 console.log(todos);
