@@ -79,9 +79,18 @@ const notes = [
 console.log(notes);
 console.log(notes.length);
 
-let index = notes.findIndex(function (note, index) {
-  console.log(note);
-  return note.title === "Habits to work on";
-});
+// let index = notes.findIndex(function (note, index) {
+//   console.log(note);
+//   return note.title === "Habits to work on";
+// });
+// console.log(index);
 
-console.log(index);
+// const findNote = function (notes, noteTitle) {
+//   const index = notes.findIndex(function (note, index) {
+//     return note.title.toLowerCase() === noteTitle.toLowerCase();
+//   });
+//   return notes[index];
+// };
+
+// let note = findNote(notes, "goAls");
+// console.log(note);
