@@ -62,7 +62,6 @@
 // console.log(notes.indexOf("Note 2"));
 
 const notes = [
-  {},
   {
     title: "My next trip",
     body: "John and Karyn in Texas",
