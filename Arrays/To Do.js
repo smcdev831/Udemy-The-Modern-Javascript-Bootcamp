@@ -18,6 +18,11 @@ console.log(`You have ${todos.length} todos.`);
 // console.log(todos);
 
 //Challenge 3
-todos.forEach(function (item, index) {
-  console.log(`Todo ${index + 1}: ${item}`);
-});
+// todos.forEach(function (item, index) {
+//   console.log(`Todo ${index + 1}: ${item}`);
+// });
+
+//Challenge 4
+// for (let i = 0; i < todos.length; i++) {
+//   console.log(`Todo ${i + 1}: ${todos[i]}`);
+// }
