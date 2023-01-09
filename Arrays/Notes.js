@@ -95,8 +95,15 @@ console.log(notes.length);
 // let note = findNote(notes, "goAls");
 // console.log(note);
 
+// const findNote = function (notes, noteTitle) {
+//   const index = notes.find(function (note, index) {
+//     return note.title.toLowerCase() === noteTitle.toLowerCase();
+//   });
+//   return notes[index];
+// };
+
 const findNote = function (notes, noteTitle) {
-  return notes.find(function (note, index) {
+  return notes.findIndex(function (note, index) {
     return note.title.toLowerCase() === noteTitle.toLowerCase();
   });
 };
