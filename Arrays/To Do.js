@@ -32,8 +32,10 @@ let deleteTodo = function (todos, task) {
   let index = todos.findIndex(function (todo) {
     return todo.text.toLowerCase() === task.toLowerCase();
   });
-  todos.splice(index, 1);
+  if (index > -1) {
+    todos.splice(index, 1);
+  }
 };
 
-deleteTodo(todos, "Do laundry");
+deleteTodo(todos, "Do sports");
 console.log(todos);
