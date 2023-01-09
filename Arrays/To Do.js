@@ -2,7 +2,7 @@ const todos = [
   { text: "Call John", completed: false },
   { text: "Practice Javascript", completed: false },
   { text: "Exercise", completed: false },
-  { text: "Do laundry", completed: false },
+  { text: "Do laundry", completed: true },
   { text: "Play WoW", completed: false },
 ];
 
@@ -29,9 +29,9 @@ console.log(`You have ${todos.length} todos.`);
 
 //Challenge 5
 let deleteTodo = function (todos, task) {
-  let index = (index = todos.findIndex(function (task, index) {
-    return task.title.toLowerCase() === task.toLowerCase();
-  }));
+  let index = todos.findIndex(function (todo) {
+    return todo.text.toLowerCase() === task.toLowerCase();
+  });
   todos.splice(index, 1);
 };
 
