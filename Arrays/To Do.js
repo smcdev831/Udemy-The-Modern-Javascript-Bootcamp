@@ -44,11 +44,10 @@ console.log(`You have ${todos.length} todos.`);
 // console.log(todos);
 
 //Challenge 6
-let getThingToDo = function (todos, index) {
-  return todos.filter(function (item, index) {
-    let incomplete = item.completed === false;
-    return incomplete;
+let getThingsToDo = function (todos) {
+  return todos.filter(function (item) {
+    return !item.completed;
   });
 };
 
-console.log(getThingToDo(todos));
+console.log(getThingsToDo(todos));
