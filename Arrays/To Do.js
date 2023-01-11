@@ -28,17 +28,27 @@ console.log(`You have ${todos.length} todos.`);
 // }
 
 //Challenge 5
-let deleteTodo = function (todos, task) {
-  let index = todos.findIndex(function (todo) {
-    return todo.text.toLowerCase() === task.toLowerCase();
+// let deleteTodo = function (todos, task) {
+//   let index = todos.findIndex(function (todo) {
+//     return todo.text.toLowerCase() === task.toLowerCase();
+//   });
+//   if (index > -1) {
+//     todos.splice(index, 1);
+//   }
+// };
+
+// deleteTodo(todos, "Do sports");
+// console.log(todos);
+
+// deleteTodo(todos, "Do laundry");
+// console.log(todos);
+
+//Challenge 6
+let getThingToDo = function (todos, index) {
+  return todos.filter(function (item, index) {
+    let incomplete = item.completed === false;
+    return incomplete;
   });
-  if (index > -1) {
-    todos.splice(index, 1);
-  }
 };
 
-deleteTodo(todos, "Do sports");
-console.log(todos);
-
-deleteTodo(todos, "Do laundry");
-console.log(todos);
+console.log(getThingToDo(todos));
