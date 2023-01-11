@@ -1,11 +1,11 @@
 let myAccount = {
   name: "Sharon Moreno",
-  expenses: 0,
+  expenses: [],
   income: 0,
 };
 
-let addExpense = function (account, amount) {
-  account.expenses += amount;
+let addExpense = function (description, amount) {
+  this.expenses.push({ description: description, amount: amount });
 };
 
 let addIncome = function (account, amount) {
@@ -14,20 +14,24 @@ let addIncome = function (account, amount) {
 
 let resetAccount = function (account) {
   account.income = 0;
-  account.expenses = 0;
+  account.expenses = [];
 };
 
 let getAccountSummary = function (account) {
-  let balance = account.income - account.expenses;
+  let spending = 0;
+  account.expenses.forEach((amount) => {
+    spending += amount;
+  });
+  let balance = account.income - spending;
   console.log(
     `Account for ${account.name} has $${balance}. $${account.income} in income. $${account.expenses} in expenses.`
   );
 };
 
-addExpense(myAccount, 2.5);
+addExpense("Monster Energy", 2.5);
 console.log(myAccount);
 
-addExpense(myAccount, 2.5);
+addExpense(myAccount, "Starbucks", 5.5);
 console.log(myAccount);
 
 addIncome(myAccount, 1000);
