@@ -9,7 +9,6 @@ let myAccount = {
     this.expenses.forEach(function (expense) {
       spending += expense.amount;
     });
-    let balance = this.income - spending;
     console.log(`Account for ${this.name} has $${spending} in expenses.`);
   },
 };
@@ -17,7 +16,7 @@ let myAccount = {
 myAccount.addExpense("Monster Energy", 2.5);
 console.log(myAccount);
 
-myAccount.addExpense("Starbucks", 5.5);
+myAccount.addExpense("Starbucks", 4.5);
 console.log(myAccount);
 
 myAccount.getAccountSummary();
