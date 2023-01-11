@@ -111,16 +111,31 @@ console.log(notes.length);
 // let note = findNote(notes, "goAls");
 // console.log(note);
 
-let findNotes = function (notes, query) {
-  return notes.filter(function (note, index) {
-    let isTitleMatch = note.title
-      .toLocaleLowerCase()
-      .includes(query.toLocaleLowerCase());
-    let isBodyMatch = note.body
-      .toLocaleLowerCase()
-      .includes(query.toLocaleLowerCase());
-    return isBodyMatch || isTitleMatch;
+// let findNotes = function (notes, query) {
+//   return notes.filter(function (note, index) {
+//     let isTitleMatch = note.title
+//       .toLocaleLowerCase()
+//       .includes(query.toLocaleLowerCase());
+//     let isBodyMatch = note.body
+//       .toLocaleLowerCase()
+//       .includes(query.toLocaleLowerCase());
+//     return isBodyMatch || isTitleMatch;
+//   });
+// };
+
+// console.log(findNotes(notes, "ExerCIsE"));
+
+let sortNotes = function (notes) {
+  notes.sort(function (a, b) {
+    if (a.title.toLowerCase() < b.title.toLowerCase()) {
+      return -1;
+    } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
+      return 1;
+    } else {
+      return 0;
+    }
   });
 };
 
-console.log(findNotes(notes, "ExerCIsE"));
+sortNotes(notes);
+console.log(notes);
