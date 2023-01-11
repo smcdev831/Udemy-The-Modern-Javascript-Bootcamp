@@ -44,10 +44,26 @@ console.log(`You have ${todos.length} todos.`);
 // console.log(todos);
 
 //Challenge 6
-let getThingsToDo = function (todos) {
-  return todos.filter(function (item) {
-    return !item.completed;
+// let getThingsToDo = function (todos) {
+//   return todos.filter(function (item) {
+//     return !item.completed;
+//   });
+// };
+
+// console.log(getThingsToDo(todos));
+
+//Challenge 7
+let sortTodos = function (todos) {
+  todos.sort(function (a) {
+    if (a.completed === false) {
+      return -1;
+    } else if (a.completed === true) {
+      return 1;
+    } else {
+      return 0;
+    }
   });
 };
 
-console.log(getThingsToDo(todos));
+sortTodos(todos);
+console.log(todos);
