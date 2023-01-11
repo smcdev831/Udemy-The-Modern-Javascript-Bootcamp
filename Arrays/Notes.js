@@ -102,11 +102,19 @@ console.log(notes.length);
 //   return notes[index];
 // };
 
-const findNote = function (notes, noteTitle) {
-  return notes.findIndex(function (note, index) {
-    return note.title.toLowerCase() === noteTitle.toLowerCase();
-  });
-};
+// const findNote = function (notes, noteTitle) {
+//   return notes.findIndex(function (note, index) {
+//     return note.title.toLowerCase() === noteTitle.toLowerCase();
+//   });
+// };
 
-let note = findNote(notes, "goAls");
-console.log(note);
+// let note = findNote(notes, "goAls");
+// console.log(note);
+
+let filteredNotes = notes.filter(function (note, index) {
+  let isTitleMatch = note.title.toLocaleLowerCase().includes("ne");
+  let isBodyMatch = note.body.toLocaleLowerCase().includes("ne");
+  return isBodyMatch || isTitleMatch;
+});
+
+console.log(filteredNotes);
