@@ -6,8 +6,10 @@ let myAccount = {
   },
   getAccountSummary: function () {
     let spending = 0;
-    this.expenses.forEach(expense);
-    spending += expense.amount;
+    this.expenses.forEach(function (expense) {
+      spending += expense.amount;
+    });
+    console.log(`Account for ${this.name} has $${spending} in expenses.`);
   },
 };
 
