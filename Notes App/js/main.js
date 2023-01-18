@@ -1,3 +1,18 @@
+const notes = [
+  {
+    title: "My next trip",
+    body: "John and Karyn in Texas",
+  },
+  {
+    title: "Habits to work on",
+    body: "Exercise, eating better, drinking water",
+  },
+  {
+    title: "Goals",
+    body: "Finish courses and get a new job",
+  },
+];
+
 console.log("This is from a different file");
 
 let p = document.querySelector("p");
