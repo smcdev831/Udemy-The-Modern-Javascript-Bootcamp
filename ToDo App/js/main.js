@@ -7,11 +7,18 @@ const todos = [
 ];
 
 console.log("This is for the To Do List app");
+let newParagraph = document.createElement("p");
 
-let ps = document.querySelectorAll("p");
+let incomplete = todos.filter(function (todo) {
+  return !todo.completed;
+});
 
-ps.forEach(function (p) {
-  if (p.textContent.includes("laundry")) {
-    p.remove();
-  }
+let summary = document.createElement("h3");
+summary.textContent = `You have ${incomplete.length} items left on your list`;
+document.querySelector("body").appendChild(summary);
+
+todos.forEach((todo) => {
+  let listItem = document.createElement("p");
+  listItem.textContent = todo.text;
+  document.querySelector("body").appendChild(listItem);
 });
