@@ -22,3 +22,8 @@ todos.forEach((todo) => {
   listItem.textContent = todo.text;
   document.querySelector("body").appendChild(listItem);
 });
+
+document.querySelector("button").addEventListener("click", function (e) {
+  e.preventDefault();
+  e.target.textContent = "New To Do Added";
+});
