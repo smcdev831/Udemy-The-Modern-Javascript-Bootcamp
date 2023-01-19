@@ -13,10 +13,12 @@ const notes = [
   },
 ];
 
-document.querySelector("button").addEventListener("click", function (e) {
+document.querySelector("#create-note").addEventListener("click", function (e) {
   e.target.textContent = "The button was clicked";
 });
 
-document.querySelectorAll("button")[1].addEventListener("click", function (e) {
-  console.log("Delete all notes");
+document.querySelector("#remove-all").addEventListener("click", function (e) {
+  document.querySelectorAll(".note").forEach(function (note) {
+    note.remove();
+  });
 });
