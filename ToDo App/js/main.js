@@ -23,7 +23,7 @@ todos.forEach((todo) => {
   document.querySelector("body").appendChild(listItem);
 });
 
-document.querySelector("button").addEventListener("click", function (e) {
+document.querySelector("#add-item").addEventListener("click", function (e) {
   e.preventDefault();
   e.target.textContent = "New To Do Added";
 });
