@@ -27,3 +27,7 @@ document.querySelector("#add-item").addEventListener("click", function (e) {
   e.preventDefault();
   e.target.textContent = "New To Do Added";
 });
+
+document.querySelector("#new-item").addEventListener("input", function (e) {
+  console.log(e.target.value);
+});
