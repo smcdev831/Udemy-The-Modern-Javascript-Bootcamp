@@ -22,3 +22,8 @@ document.querySelector("#remove-all").addEventListener("click", function (e) {
     note.remove();
   });
 });
+
+document.querySelector("#search-text").addEventListener("input", function (e) {
+  e.preventDefault();
+  console.log(e.target.value);
+});
