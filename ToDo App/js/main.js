@@ -13,22 +13,29 @@ let filters = {
   serarchText: "",
 };
 
-//start
-let incomplete = todos.filter(function (todo) {
-  return !todo.completed;
-});
+let renderTodos = function (todos, filters) {
+  let filteredTodos = todos.filter(function (todo) {
+    return todo.text.toLowerCase().includes(filters.serarchText.toLowerCase());
+  });
 
-let summary = document.createElement("h3");
-summary.textContent = `You have ${incomplete.length} items left on your list`;
-document.querySelector("#todos").appendChild(summary);
+  let incomplete = filteredTodos.filter(function (todo) {
+    return !todo.completed;
+  });
 
-todos.forEach((todo) => {
-  let listItem = document.createElement("p");
-  listItem.textContent = todo.text;
-  document.querySelector("#todos").appendChild(listItem);
-});
+  document.querySelector("#todos").innerHTML = "";
 
-//end
+  let summary = document.createElement("h3");
+  summary.textContent = `You have ${incomplete.length} items left on your list`;
+  document.querySelector("#todos").appendChild(summary);
+
+  filteredTodos.forEach((todo) => {
+    let listItem = document.createElement("p");
+    listItem.textContent = todo.text;
+    document.querySelector("#todos").appendChild(listItem);
+  });
+};
+
+renderTodos(todos, filters);
 
 document.querySelector("#add-item").addEventListener("click", function (e) {
   e.preventDefault();
@@ -41,4 +48,5 @@ document.querySelector("#new-item").addEventListener("input", function (e) {
 
 document.querySelector("#search-text").addEventListener("input", function (e) {
   filters.serarchText = e.target.value;
+  renderTodos(todos, filters);
 });
