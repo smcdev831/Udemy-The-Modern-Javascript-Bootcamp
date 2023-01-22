@@ -11,11 +11,20 @@ let newParagraph = document.createElement("p");
 
 let filters = {
   serarchText: "",
+  hideCompleted: false,
 };
 
 let renderTodos = function (todos, filters) {
   let filteredTodos = todos.filter(function (todo) {
     return todo.text.toLowerCase().includes(filters.serarchText.toLowerCase());
+  });
+
+  filteredTodos = filteredTodos.filter(function (todo) {
+    if (filters.hideCompleted) {
+      return !todo.completed;
+    } else {
+      return true;
+    }
   });
 
   let incomplete = filteredTodos.filter(function (todo) {
@@ -55,5 +64,6 @@ document.querySelector("#todo-form").addEventListener("submit", function (e) {
 document
   .querySelector("#hide-completed")
   .addEventListener("change", function (e) {
+    filters.hideCompleted = e.target.checked;
     renderTodos(todos, filters);
   });
