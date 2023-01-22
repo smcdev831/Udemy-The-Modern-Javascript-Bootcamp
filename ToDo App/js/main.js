@@ -20,11 +20,7 @@ let renderTodos = function (todos, filters) {
   });
 
   filteredTodos = filteredTodos.filter(function (todo) {
-    if (filters.hideCompleted) {
-      return !todo.completed;
-    } else {
-      return true;
-    }
+    return !filters.hideCompleted || !todo.completed;
   });
 
   let incomplete = filteredTodos.filter(function (todo) {
