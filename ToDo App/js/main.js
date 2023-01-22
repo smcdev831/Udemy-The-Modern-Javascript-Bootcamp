@@ -37,16 +37,17 @@ let renderTodos = function (todos, filters) {
 
 renderTodos(todos, filters);
 
-document.querySelector("#add-item").addEventListener("click", function (e) {
-  e.preventDefault();
-  e.target.textContent = "New To Do Added";
-});
-
-document.querySelector("#new-item").addEventListener("input", function (e) {
-  console.log(e.target.value);
-});
-
 document.querySelector("#search-text").addEventListener("input", function (e) {
   filters.serarchText = e.target.value;
   renderTodos(todos, filters);
+});
+
+document.querySelector("#todo-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  todos.push({
+    text: e.target.elements.text.value,
+    completed: false,
+  });
+  renderTodos(todos, filters);
+  e.target.elements.text.value = "";
 });
