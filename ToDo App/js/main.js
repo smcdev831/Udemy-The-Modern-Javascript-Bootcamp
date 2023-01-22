@@ -51,3 +51,9 @@ document.querySelector("#todo-form").addEventListener("submit", function (e) {
   renderTodos(todos, filters);
   e.target.elements.text.value = "";
 });
+
+document
+  .querySelector("#hide-completed")
+  .addEventListener("change", function (e) {
+    renderTodos(todos, filters);
+  });
