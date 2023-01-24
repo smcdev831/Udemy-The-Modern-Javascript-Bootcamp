@@ -17,10 +17,10 @@
     <label
       >Search: <input id="search-text" type="text" placeholder="Filter Notes"
     /></label>
-    <select>
-      <option>Sort by last edited</option>
-      <option>Sort by recently created</option>
-      <option>Sort alpahbetically</option>
+    <select id="filter-by">
+      <option value="byEdited">Sort by last edited</option>
+      <option value="byCreated">Sort by recently created</option>
+      <option value="alphabetical">Sort alpahbetically</option>
     </select>
     <div id="notes"></div>
     <button id="create-note">Create Note</button>
