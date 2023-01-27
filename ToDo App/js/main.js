@@ -1,13 +1,13 @@
-const todos = [
-  { text: "Call John", completed: false },
-  { text: "Practice Javascript", completed: false },
-  { text: "Exercise", completed: false },
-  { text: "Do laundry", completed: true },
-  { text: "Play WoW", completed: false },
-];
+let todos = [];
 
 console.log("This is for the To Do List app");
 let newParagraph = document.createElement("p");
+
+let todosJSON = localStorage.getItem("todos");
+
+if (todosJSON !== null) {
+  todos = JSON.parse(todosJSON);
+}
 
 let filters = {
   serarchText: "",
@@ -53,6 +53,7 @@ document.querySelector("#todo-form").addEventListener("submit", function (e) {
     text: e.target.elements.text.value,
     completed: false,
   });
+  localStorage.setItem("todos", JSON.stringify(todos));
   renderTodos(todos, filters);
   e.target.elements.text.value = "";
 });
