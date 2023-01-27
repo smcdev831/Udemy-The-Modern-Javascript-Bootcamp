@@ -1,17 +1,4 @@
-const notes = [
-  {
-    title: "My next trip",
-    body: "John and Karyn in Texas",
-  },
-  {
-    title: "Habits to work on",
-    body: "Exercise, eating better, drinking water",
-  },
-  {
-    title: "Goals",
-    body: "Finish courses and get a new job",
-  },
-];
+const notes = [];
 
 let filters = {
   searchText: "",
@@ -46,16 +33,3 @@ document.querySelector("#search-text").addEventListener("input", function (e) {
 document.querySelector("#filter-by").addEventListener("change", function (e) {
   console.log(e.target.value);
 });
-
-// let user = {
-//   name: "Maria",
-//   age: 36,
-// };
-
-// let userMaria = JSON.stringify(user);
-// console.log(userMaria);
-// localStorage.setItem("user", userMaria);
-
-let userJSON = localStorage.getItem("user");
-let user = JSON.parse(userJSON);
-console.log(user.name, user.age);
