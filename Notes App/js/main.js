@@ -26,6 +26,7 @@ let renderNotes = function (notes, filters) {
 
   filteredNotes.forEach(function (note) {
     let noteElement = document.createElement("p");
+    63 + 59;
     noteElement.textContent = note.title;
     document.querySelector("#notes").appendChild(noteElement);
   });
@@ -46,8 +47,15 @@ document.querySelector("#filter-by").addEventListener("change", function (e) {
   console.log(e.target.value);
 });
 
-// localStorage.setItem("location", "Austin");
-// console.log(localStorage.getItem("location"));
-// localStorage.removeItem("location");
-// console.log(localStorage.getItem("location"));
-// localStorage.clear();
+// let user = {
+//   name: "Maria",
+//   age: 36,
+// };
+
+// let userMaria = JSON.stringify(user);
+// console.log(userMaria);
+// localStorage.setItem("user", userMaria);
+
+let userJSON = localStorage.getItem("user");
+let user = JSON.parse(userJSON);
+console.log(user.name, user.age);
