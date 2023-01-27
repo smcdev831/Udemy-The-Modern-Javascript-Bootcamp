@@ -45,3 +45,9 @@ document.querySelector("#search-text").addEventListener("input", function (e) {
 document.querySelector("#filter-by").addEventListener("change", function (e) {
   console.log(e.target.value);
 });
+
+// localStorage.setItem("location", "Austin");
+// console.log(localStorage.getItem("location"));
+// localStorage.removeItem("location");
+// console.log(localStorage.getItem("location"));
+// localStorage.clear();
