@@ -1,8 +1,14 @@
-const notes = [];
+let notes = [];
 
 let filters = {
   searchText: "",
 };
+
+let notesJSON = localStorage.getItem("notes");
+
+if (notesJSON !== null) {
+  notes = JSON.parse(notesJSON);
+}
 
 let renderNotes = function (notes, filters) {
   let filteredNotes = notes.filter(function (note) {
@@ -13,8 +19,13 @@ let renderNotes = function (notes, filters) {
 
   filteredNotes.forEach(function (note) {
     let noteElement = document.createElement("p");
-    63 + 59;
-    noteElement.textContent = note.title;
+
+    if (note.title > 0) {
+      noteElement.textContent = note.title;
+    } else {
+      noteElement.textContent = "Untitled Note";
+    }
+
     document.querySelector("#notes").appendChild(noteElement);
   });
 };
@@ -22,7 +33,12 @@ let renderNotes = function (notes, filters) {
 renderNotes(notes, filters);
 
 document.querySelector("#create-note").addEventListener("click", function (e) {
-  e.target.textContent = "The button was clicked";
+  notes.push({
+    title: "",
+    body: "",
+  });
+  localStorage.setItem("notes", JSON.stringify(notes));
+  renderNotes(notes, filters);
 });
 
 document.querySelector("#search-text").addEventListener("input", function (e) {
