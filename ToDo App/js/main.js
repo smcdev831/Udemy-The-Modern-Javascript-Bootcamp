@@ -21,6 +21,7 @@ document.querySelector("#todo-form").addEventListener("submit", function (e) {
     completed: false,
   });
 
+  saveTodos(todos);
   renderTodos(todos, filters);
   e.target.elements.text.value = "";
 });
