@@ -8,7 +8,7 @@ let getSavedTodos = function () {
   }
 };
 
-let saveTodos = function () {
+let saveTodos = function (todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
 };
 
@@ -27,13 +27,21 @@ let renderTodos = function (todos, filters) {
 
   document.querySelector("#todos").innerHTML = "";
 
-  let summary = document.createElement("h3");
-  summary.textContent = `You have ${incomplete.length} items left on your list`;
-  document.querySelector("#todos").appendChild(summary);
+  document.querySelector("#todos").appendChild(generateSummaryDOM(incomplete));
 
   filteredTodos.forEach((todo) => {
-    let listItem = document.createElement("p");
-    listItem.textContent = todo.text;
-    document.querySelector("#todos").appendChild(listItem);
+    document.querySelector("#todos").appendChild(generateTodoDOM(todo));
   });
+};
+
+let generateTodoDOM = function (todo) {
+  let listItem = document.createElement("p");
+  listItem.textContent = todo.text;
+  return listItem;
+};
+
+let generateSummaryDOM = function (incomplete) {
+  let summary = document.createElement("h3");
+  summary.textContent = `You have ${incomplete.length} items left on your list`;
+  return summary;
 };
