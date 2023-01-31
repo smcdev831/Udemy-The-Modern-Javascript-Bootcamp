@@ -17,3 +17,16 @@ let generateNoteDOM = function (note) {
   }
   return noteElement;
 };
+
+let renderNotes = function (notes, filters) {
+  let filteredNotes = notes.filter(function (note) {
+    return note.title.toLowerCase().includes(filters.searchText.toLowerCase());
+  });
+
+  document.querySelector("#notes").innerHTML = "";
+
+  filteredNotes.forEach(function (note) {
+    let noteElement = generateNoteDOM(note);
+    document.querySelector("#notes").appendChild(noteElement);
+  });
+};
