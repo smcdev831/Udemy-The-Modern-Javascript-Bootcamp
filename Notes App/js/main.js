@@ -1,33 +1,7 @@
-let notes = [];
+let notes = getSavedNotes();
 
 let filters = {
   searchText: "",
-};
-
-let notesJSON = localStorage.getItem("notes");
-
-if (notesJSON !== null) {
-  notes = JSON.parse(notesJSON);
-}
-
-let renderNotes = function (notes, filters) {
-  let filteredNotes = notes.filter(function (note) {
-    return note.title.toLowerCase().includes(filters.searchText.toLowerCase());
-  });
-
-  document.querySelector("#notes").innerHTML = "";
-
-  filteredNotes.forEach(function (note) {
-    let noteElement = document.createElement("p");
-
-    if (note.title > 0) {
-      noteElement.textContent = note.title;
-    } else {
-      noteElement.textContent = "Untitled Note";
-    }
-
-    document.querySelector("#notes").appendChild(noteElement);
-  });
 };
 
 renderNotes(notes, filters);
