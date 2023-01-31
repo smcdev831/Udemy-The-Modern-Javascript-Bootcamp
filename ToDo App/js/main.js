@@ -1,43 +1,10 @@
-let todos = [];
+let todos = getSavedTodos();
 
-console.log("This is for the To Do List app");
 let newParagraph = document.createElement("p");
-
-let todosJSON = localStorage.getItem("todos");
-
-if (todosJSON !== null) {
-  todos = JSON.parse(todosJSON);
-}
 
 let filters = {
   serarchText: "",
   hideCompleted: false,
-};
-
-let renderTodos = function (todos, filters) {
-  let filteredTodos = todos.filter(function (todo) {
-    return todo.text.toLowerCase().includes(filters.serarchText.toLowerCase());
-  });
-
-  filteredTodos = filteredTodos.filter(function (todo) {
-    return !filters.hideCompleted || !todo.completed;
-  });
-
-  let incomplete = filteredTodos.filter(function (todo) {
-    return !todo.completed;
-  });
-
-  document.querySelector("#todos").innerHTML = "";
-
-  let summary = document.createElement("h3");
-  summary.textContent = `You have ${incomplete.length} items left on your list`;
-  document.querySelector("#todos").appendChild(summary);
-
-  filteredTodos.forEach((todo) => {
-    let listItem = document.createElement("p");
-    listItem.textContent = todo.text;
-    document.querySelector("#todos").appendChild(listItem);
-  });
 };
 
 renderTodos(todos, filters);
@@ -53,7 +20,7 @@ document.querySelector("#todo-form").addEventListener("submit", function (e) {
     text: e.target.elements.text.value,
     completed: false,
   });
-  localStorage.setItem("todos", JSON.stringify(todos));
+
   renderTodos(todos, filters);
   e.target.elements.text.value = "";
 });
