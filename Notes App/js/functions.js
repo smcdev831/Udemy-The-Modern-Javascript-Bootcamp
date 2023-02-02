@@ -8,13 +8,19 @@ let getSavedNotes = function () {
 };
 
 let generateNoteDOM = function (note) {
-  let noteElement = document.createElement("p");
+  let noteElement = document.createElement("div");
+  let textElement = document.createElement("span");
+  let button = document.createElement("button");
+  button.textContent = "X";
 
   if (note.title > 0) {
-    noteElement.textContent = note.title;
+    textElement.textContent = note.title;
   } else {
-    noteElement.textContent = "Untitled Note";
+    textElement.textContent = "Untitled Note";
   }
+  noteElement.appendChild(button);
+  noteElement.appendChild(textElement);
+
   return noteElement;
 };
 
