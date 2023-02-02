@@ -35,8 +35,12 @@ let renderTodos = function (todos, filters) {
 };
 
 let generateTodoDOM = function (todo) {
+  let button = document.createElement("button");
   let listItem = document.createElement("p");
+  button.textContent = "X";
   listItem.textContent = todo.text;
+  listItem.appendChild(button);
+
   return listItem;
 };
 
