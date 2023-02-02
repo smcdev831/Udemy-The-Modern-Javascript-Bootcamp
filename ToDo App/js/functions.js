@@ -35,13 +35,20 @@ let renderTodos = function (todos, filters) {
 };
 
 let generateTodoDOM = function (todo) {
+  let container = document.createElement("div");
   let button = document.createElement("button");
-  let listItem = document.createElement("p");
+  let listItem = document.createElement("span");
+  let checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+
   button.textContent = "X";
   listItem.textContent = todo.text;
-  listItem.appendChild(button);
 
-  return listItem;
+  container.appendChild(checkbox);
+  container.appendChild(listItem);
+  container.appendChild(button);
+
+  return container;
 };
 
 let generateSummaryDOM = function (incomplete) {
