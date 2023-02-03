@@ -1,5 +1,3 @@
-const { v4: uuidv4 } = require("uuid");
-
 let notes = getSavedNotes();
 
 let filters = {
